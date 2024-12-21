@@ -29,7 +29,7 @@ class ATM {
         if (inputUsername.equals(registeredUsername) && inputPassword.equals(registeredPassword)) {
             return true;
         } else {
-            System.out.println("Invalid username or password.");
+            System.out.println("Invalid username or password.Please try again with valid credentials.");
             return false;
         }
 
@@ -42,11 +42,18 @@ class ATM {
         double amount = scanner.nextDouble();
 
 
-        if (amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrawal successful! New balance: " + balance);
-        } else {
-            System.out.println("Insufficient balance.");
+        if(amount>0)
+        {
+        	if ( amount <= balance) {
+                balance -= amount;
+                System.out.println("Withdrawal successful! New balance: " + balance);
+            } else {
+                System.out.println("Insufficient balanc!! Sorry for inconvenience" );
+            }
+        }
+        else
+        {
+        	System.out.println("Dear User Please Enter a valid ammount, which is grater than 0");
         }
     }
 
